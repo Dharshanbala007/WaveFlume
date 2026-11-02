@@ -1,0 +1,20 @@
+# Build output
+bin/
+obj/
+artifacts/
+*.user
+.vs/
+TestResults/
+
+# Local session notes
+.remember/
+
+# Local credentials and machine data: never commit
+test-mysql.txt
+.local/
+pki/
+Runs/
+logs/
+calibration.json
+settings.json
+recipes.json

@@ -1,0 +1,51 @@
+<UserControl x:Class="WaveFlume.App.Views.HelpView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <ScrollViewer Margin="8" VerticalScrollBarVisibility="Auto">
+        <StackPanel MaxWidth="900" HorizontalAlignment="Left">
+            <GroupBox Header="About">
+                <StackPanel>
+                    <TextBlock FontWeight="SemiBold" Text="WaveFlume - 6-Paddle Wavemaker SCADA/HMI"/>
+                    <TextBlock x:Name="VersionText" Style="{StaticResource Muted}" Margin="0,0,0,6"/>
+                    <TextBlock TextWrapping="Wrap">
+                        Supervisory control for a 3.0 m x 45.0 m wave flume with six independent piston/flap paddles.
+                        Upgrade of IITM WaveGen v1.1 (SAMUDRA / Indomer Coastal Hydraulics).
+                    </TextBlock>
+                </StackPanel>
+            </GroupBox>
+            <GroupBox Header="Safety">
+                <TextBlock TextWrapping="Wrap">
+                    This PC is a supervisory, non-real-time system. The hardwired E-stop chain is the primary stop;
+                    the on-screen EMERGENCY STOP is an additional request only. The PLC and drives enforce stroke,
+                    velocity and acceleration limits independently of this software.
+                </TextBlock>
+            </GroupBox>
+            <GroupBox Header="Operating Sequence">
+                <TextBlock TextWrapping="Wrap" xml:space="preserve">1. Wave Generation: enter the wave, press Calculate. A red BLOCKED message means nothing can be sent.
+2. Wave Paddle: Connect, Enable Servos, Home, Send to Wave Paddle, Start Wave.
+3. Smooth Stop ends a run gracefully; logging continues for the extra record duration.
+4. Each run is logged to Documents\WaveFlume\Runs\yyyyMMdd_HHmmss_TestNumber.csv.</TextBlock>
+            </GroupBox>
+            <GroupBox Header="Manual">
+                <TextBlock TextWrapping="Wrap" Style="{StaticResource Muted}">
+                    The operator manual (PDF) is not yet written. See docs/README.md and docs/PLC_IO_MAP.md in the source tree.
+                </TextBlock>
+            </GroupBox>
+            <GroupBox Header="Third-party Licences">
+                <TextBlock TextWrapping="Wrap" xml:space="preserve">.NET 8 / WPF - MIT (Microsoft)
+CommunityToolkit.Mvvm - MIT
+Microsoft.Extensions.Hosting - MIT
+Serilog - Apache-2.0
+ScottPlot 5 - MIT; SkiaSharp - MIT
+MathNet.Numerics - MIT
+NModbus - MIT
+OPCFoundation.NetStandard.Opc.Ua - dual licence: GPL-2.0 or OPC Foundation RCL (corporate members). Check before redistributing.
+libplctag / libplctag.NET - MPL-2.0 / LGPL-2.0 (native plctag.dll shipped unmodified)
+S7netplus - MIT
+MySqlConnector - MIT
+QuestPDF - Community licence (free below USD 1M revenue, non-profit, academic); check eligibility.
+xUnit, FluentAssertions 6 - Apache-2.0</TextBlock>
+            </GroupBox>
+        </StackPanel>
+    </ScrollViewer>
+</UserControl>
